@@ -1,37 +1,60 @@
-## Welcome to GitHub Pages
+# Bank Identification Number (BIN) Databases
 
-You can use the [editor on GitHub](https://github.com/Shoresh92/bindb/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Based on the first 6 digits of a payment card, BIN (Bank Identification Number) database provides useful information about the card type (credit or debit), the card brand (Visa, MasterCard, etc.), the issuing bank (Chase, TD, Bank of America, etc.), the category (reward, classic, etc.), and the country where the card was issued.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This database, is mainly used for fraud prevention. Most of the BIN providers allow you to [check the first 6 digits](https://www.bindb.com/bin-database.html) of a credit card agains their database to make sure you are accepting a valid card.
 
-### Markdown
+The available BIN databases are NOT suited for analytics purposes. For instance, in the **Issuing Bank** feature, the following records all indicate **Chase**:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    CHASE,
+    CHASE BANK,
+    CHASE MANHATTAN,
+    JPMORGAN CHASE BANK, N.A.,
+    CHASE BANK USA, N.A.,
+    CHASE MANHATTAN BANK USA, N.A.,
+    JPMORGAN CHASE BANK,
+    JPMORGAN CHASE BANK N.A.,
+    CHASE BANK USA N.A.,
+    CHASE MANHATTAN BANK,
+    JPMORGAN CHASE BANK NA - ACQUIRING,
+    CHASE - BP,
+    JPMORGAN CHASE BANK NA,
+    CHASE (FORMERLY BANK ONE),
+    CHASE (FORMERLY FIRST USA),
+    CHASE MANHATTAN PRIVATE BANK (FLORIDA),
+    CHASE MANHATTAN BANK (USA),
+    JPMORGAN CHASE BANK N.A. - COMMERCIAL,
+    JPMORGAN CHASE BANK N.A.  PR,
+    JPMORGAN CHASE BANK PR,
+    JPMORGAN CHASE,
+    JPMORGAN CHASE BANK N.A. - DEBIT,
+    CHASE MANHATTAN CARD CO., LTD.,
+    PAULSON CAPITAL CORP (JPMORGAN CHASE),
+    CHASE MANHATTAN BANK USA,
+    CHASE BANK USA PR,
+    DISNEY REWARDS (ISSUED BY CHASE),
+    SAMAZON.COM BY JPMORGAN CHASE,
+    JPMORGAN CHASE & CO.,
+    JPMORGAN CHASE AND CO.,
+    CHASE MANHATTAN BANK USA N.A.,
+    JPMORGAN CHASE BANK N.A. PR,
+    PREPAGO CHASE,
+    EBT JPMORGAN CHASE,
+    SKYMILES BY JP MORGAN CHASE,
+    JPMORGAN CHASE BANK NATIONAL ASSOCIATION,
+    CHASE BANK USA NATIONAL ASSOCIATION,
+    SAMAZON.COM by JPMORGAN CHASE,
+    CHASE (FORMER PROVIDIAN NATIONAL BANK),
+    CHASE (FORMER WASHINGTON MUTUAL),
+    TARGET CARD ISSUED BY JPMORGAN CHASE BANK,
+    CHASE PRIVATE BANK,
+    JP MORGAN CHASE BANK N.A.,
+    CHASE MANHATTAN CARD COMPANY LIMITED,
+    EBAY MASTERCARD by JPMORGAN CHASE BANK
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+The same problem holds for other features like **Brands**. Therefore, before doing any analytics using the BIN databases, one need to invest time to fix these issues.
 
-- Bulleted
-- List
+The python code presented in this repo, **Spreedly.py**, provides such fixes two two major BIN databases, [bindb](https://www.bindb.com/)  and [binbase](http://binbase.com/).
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Shoresh92/bindb/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The detailed explanation of this file, will be presented in near future in a blog post on [Spreedly's](https://spreedly.com) webpage.
